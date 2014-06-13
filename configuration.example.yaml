@@ -1,0 +1,24 @@
+outdir: results/
+
+to_test:
+    - test.pdf
+    - test_img 
+
+compressions:
+    zip:
+        out: zip
+        command: "zip -r :outfile: :infile:"
+    tar.gz:
+        out: tar.gz
+        command: "tar -czf :outfile: :infile:"
+    tar.bz:
+        out: tar.bz
+        command: "tar -cjf :outfile: :infile:"
+    tar.xz:
+        out: tar.xz
+        command: "tar -cJf :outfile: :infile:"
+    7z:
+        out: 7z
+        command: "7z a :outfile: :infile:"
+
+

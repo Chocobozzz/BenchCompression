@@ -1,0 +1,59 @@
+#!/usr/bin/env perl 
+#===============================================================================
+#
+#         FILE: test.pl
+#
+#        USAGE: ./test.pl  
+#
+#  DESCRIPTION: 
+#
+#      OPTIONS: ---
+# REQUIREMENTS: ---
+#         BUGS: ---
+#        NOTES: ---
+#       AUTHOR: Florian Bigard, florian.bigard@gmail.com
+#      VERSION: 1.0
+#      CREATED: 21/04/2014 17:15:31
+#     REVISION: ---
+#===============================================================================
+
+use strict;
+use warnings;
+use utf8;
+
+use lib './lib';
+
+use BenchConfig;
+use BenchData;
+use BenchFactory;
+use BenchPrintGraph;
+
+my $bench_config = new BenchConfig({
+        yaml => "configuration.yaml"
+    });
+
+my $bench_factory = new BenchFactory({
+        config_bench => $bench_config
+    });
+
+$bench_factory->exec;
+my @benchs_data = $bench_factory->getResults;
+
+my $bench_print_graph = new BenchPrintGraph;
+
+my $dir = "graphs/";
+
+my $i=1;
+for my $bench_data (@benchs_data) {
+    $bench_print_graph->setBenchData($bench_data);
+
+    $bench_print_graph->benchByTime($dir . "graph_time$i.png");
+    $bench_print_graph->benchBySizeAfter($dir . "graph_size_after$i.png");
+    $bench_print_graph->benchBySizeReduced($dir . "graph_size_reduced$i.png");
+    $bench_print_graph->benchByEfficiency($dir . "graph_efficiency$i.png");
+
+    ++$i;
+}
+
+
+
