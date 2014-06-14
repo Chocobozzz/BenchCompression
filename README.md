@@ -3,7 +3,7 @@
 ## SYNOPSIS
 Bench various methods of compression on various files/directories to find the most effective method for your computer.
 
-![Example of graph output](http://lutim.cpy.re/KH5291wy, "Example of graph output")
+![Example of graph output](http://lutim.cpy.re/KH5291wy.png, "Example of graph output")
 
 ## USAGE
 
