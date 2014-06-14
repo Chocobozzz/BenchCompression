@@ -24,8 +24,8 @@ BenchCompression is a module so you can use it in your scripts. The bin "benchCo
 
 You have an example of the typical configuration in the configuration.example.yaml file.
 
-* **outdir** : Directory to put the compressed files/directories. Have to be empty otherwise can cause bugs
-* **to_test** : Directorees or files to test. 
+* **outdir** : Directory to put the compressed files/directories. This directory have to be empty otherwise can cause bugs
+* **to_test** : Directories or files to test. 
 **Warning !** Directories do not have to contain the final "/"
 * **compressions** :
     * **[method's name]** : The name of the method of compression (zip, 7z...)
