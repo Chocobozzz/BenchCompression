@@ -26,13 +26,8 @@ You have an example of the typical configuration in the configuration.example.ya
 
 * **outdir** : Directory to put the compressed files/directories. Have to be empty otherwise can cause bugs
 * **to_test** : Directorees or files to test. 
-
 **Warning !** Directories do not have to contain the final "/"
-* **compressions** 
-    * **[method's name]** The name of the method of compression (zip, 7z...)
-        * **out** Extension of the method of compression without the . (zip, tar.gz...)
-        * **command** The command to execute the method of compression. 
-
-        :infile: represents the filepath to compress
-
-        :outfile: represents the filepath compressed
+* **compressions** :
+    * **[method's name]** : The name of the method of compression (zip, 7z...)
+        * **out** : Extension of the method of compression without the . (zip, tar.gz...)
+        * **command** : The command to execute the method of compression where :infile: represents the filepath to compress and :outfile: the filepath compressed.
